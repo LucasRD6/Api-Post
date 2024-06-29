@@ -1,0 +1,30 @@
+﻿@model Api_Post.Models.Publicaciones
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalles de la Publicacion</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Titulo
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nombrePost)
+        </dd>
+        <dt class = "col-sm-2">
+            Descripcion
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.idPost">Editar</a> |
+    <a asp-action="Index">Volver</a>
+</div>

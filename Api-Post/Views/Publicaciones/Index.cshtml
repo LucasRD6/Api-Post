@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Api_Post.Models.Publicaciones>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Publicaciones</h1>
+
+<p>
+    <a asp-action="Create">Crear nueva publicacion</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Titulo
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombrePost)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.idPost">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.idPost">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.idPost">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
